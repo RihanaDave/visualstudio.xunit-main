@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net462;net6.0</TargetFrameworks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NSubstitute" Version="$(NSubstituteVersion)" />
+    <PackageReference Include="xunit" Version="$(XunitVersion)" />
+    <PackageReference Include="xunit.runner.reporters" Version="$(XunitVersion)" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="$(MicrosoftNetTestSdkVersion)" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net462' ">
+    <PackageReference Include="Microsoft.TestPlatform.ObjectModel" Version="$(MicrosoftTestPlatformObjectModelVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\xunit.runner.visualstudio\xunit.runner.visualstudio.csproj" />
+  </ItemGroup>
+
+</Project>
